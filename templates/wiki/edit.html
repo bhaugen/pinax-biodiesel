@@ -1,0 +1,67 @@
+{% extends "wiki/base.html" %}
+
+{% load i18n %}
+{% load uni_form %}
+{% load wiki_tags %}
+{% load group_tags %}
+
+{% block head_title %}Wiki for {{ group.name }} - {% trans "Edit Article" %} {% endblock %}
+
+{% block body %}
+    
+    {% wiki_title group %}
+    
+	<div class="right_panel">
+        <h2>Formatting:</h2>
+
+		<p>Use the Markdown language.</p>
+
+		<p>#Heading</p>
+		<p>##Subheading</p>
+		<p>###Etc.</p>
+		<p>Looks like this:</p>
+		<h1>Heading</h1>
+		<h2>Subheading</h2>
+		<h3>Etc.</h3>
+
+		<p>Bulleted lists:</p>
+		<p>
+			* Item 1 <br />
+			* Item 2 <br />
+			* Item 3 
+		</p>
+		<p>Look like this:</p>
+
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+
+		<p>
+			Images: <br />
+			![alternate text](image url)<br />
+            Example: <br />
+			![Biodiesel](http://img.alibaba.com/photo/104491459/Biodiesel_B100_from_Soybean_Only_100_000_liters__0_76_liter.summ.jpg)<br />
+			Look like this:
+		</p>
+
+		<img src="http://img.alibaba.com/photo/104491459/Biodiesel_B100_from_Soybean_Only_100_000_liters__0_76_liter.summ.jpg" alt="Biodiesel" />
+
+		<p>More documentation <a href="http://daringfireball.net/projects/markdown/basics" target="_blank" >here</a>
+
+    </div>
+    
+    <div class="left_panel">
+    <h2>{% trans "Edit Article" %}</h2>
+    
+    <form method="POST" action="" class="uniForm">
+        <fieldset class="inlineLabels">
+            {{ form|as_uni_form }}
+            <div class="form_block">
+                <input type="submit" value="{% trans "Save Article" %}"/>
+            </div>
+        </fieldset>
+    </form>
+	</div>
+{% endblock %}
