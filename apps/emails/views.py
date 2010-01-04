@@ -12,7 +12,7 @@ def send_email(request):
             from_email = data["email_address"]
             subject = " ".join(["[biodiesel_request]", data["subject"]])
             message = data["message"]
-            send_mail(subject, message, from_email, ["bob.haugen@gmail.com",])      
+            send_mail(subject, message, from_email, ["rgoonin@gmail.com",])      
             return HttpResponseRedirect(reverse("email_sent"))
     else:
         email_form = EmailForm()
