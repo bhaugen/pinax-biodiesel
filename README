@@ -1,0 +1,10 @@
+pinax-biodiesel is a variant of the Pinax intranet_project being iteratively developed for a biodiesel group.
+
+Depends on Pinax-0.7.1
+
+Customizations so far:
++ worked around wiki markup hyperlinks bug
++ added topic and task tags to tags index
+~ internalized wiki and tasks to use default markup
+
+More to come...
