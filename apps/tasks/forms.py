@@ -69,7 +69,7 @@ class EditTaskForm(forms.ModelForm):
         
         self.fields["assignee"].queryset = assignee_queryset.order_by("username")
         self.fields['summary'].widget.attrs["size"] = 65
-        self.fields.keyOrder = ["summary","tags", "status", "assignee", "state", "resolution"]
+        self.fields.keyOrder = ["detail", "summary","tags", "status", "assignee", "state", "resolution"]
         
         if self.instance.assignee != user:
             del self.fields["status"]
@@ -88,7 +88,7 @@ class EditTaskForm(forms.ModelForm):
     tags = TagField(required=False, widget=TagAutoCompleteInput(app_label='tasks', model='task'))
     
     class Meta(TaskForm.Meta):
-        fields = ('summary','status', 'assignee', 'state', 'tags', 'resolution')
+        fields = ('detail', 'summary','status', 'assignee', 'state', 'tags', 'resolution')
     
     def clean_resolution(self):
         if self.cleaned_data["state"] == u"2":

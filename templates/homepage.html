@@ -8,43 +8,25 @@
 
 
 	{% if user.is_authenticated %}
-		<h1>{% trans "Welcome to the Biodiesel Social Network" %}</h1>
+		<h1>Welcome to the Southwest Wisconsin Community Bio-fuel Site</h1>
 			
-		<p>
-		    {% blocktrans %}
-		    <b>A biodiesel social network</b> is a website where you can discuss
-		    biodiesel topics with others.
-		    {% endblocktrans %}
-		</p>
+		<h3>
+			where we will keep each other up to date on the progress of our initiative and share knowledge. 
+		</h3>
 		
 		
 		<h2>{% trans "About this site" %}</h2>
 		
 		<p>
-		    {% blocktrans %}
-		    This site is experimental.  At this stage, it includes 
-		    profiles, discussion topics, tasks, wikis, bookmarks, notices of events, and user-to-user messaging.
-		    {% endblocktrans %}
+		    This site includes discussion topics, tasks, wikis, bookmarks, profiles and event notification options.
 		</p>
 
 
-		<h2>{% trans "Topics vs Wikis" %}</h2>
-		
-		<ul>
-		    {% blocktrans %}
-		    <li>Both Topics and Wikis contain articles written by site members.</li>
-		    <li>Topics may have comments by other site members, and replies to the comments, forming threaded discussions.</li>
-		    <li>Topic and comment contents may not be changed by other members.</li>
-		    <li>Wiki articles can be changed by other members, and keep a change history that allows changing back to a previous version.</li>
-		    <li>Wiki articles may be formatted to include headings, images, bulleted and numbered lists, and tables, while Topics are unformatted.</li>
-			<li>In general, Topics are suitable for short-lived group discussions, while Wiki articles are suitable for long-lived documents.</li>
-		    {% endblocktrans %}
-		</ul>
 
 	{% else %}
 
 		<h3>
-		    This site is a social network for a biodiesel group in the Driftless Region of western Wisconsin.<br />
+		    This site is a social network for a biodiesel group in Southwest Wisconsin.<br />
 			If you would like to become a member, please <a href="{% url send_email %}" target="_blank">send us an email</a>.
 		</h3>
 
