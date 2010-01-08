@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
 
+{% load feature_tags %}
 {% load i18n %}
 
 {% block head_title %}Homepage{% endblock %}
@@ -8,19 +9,8 @@
 
 
 	{% if user.is_authenticated %}
-		<h1>Welcome to the Southwest Wisconsin Community Bio-fuel Site</h1>
-			
-		<h3>
-			where we will keep each other up to date on the progress of our initiative and share knowledge. 
-		</h3>
-		
-		
-		<h2>{% trans "About this site" %}</h2>
-		
-		<p>
-		    This site includes discussion topics, tasks, wikis, bookmarks, profiles and event notification options.
-		</p>
 
+		{% show_welcome %}
 
 
 	{% else %}
