@@ -1,0 +1,15 @@
+{% load i18n %}
+{% if group %}
+{% blocktrans %}{{ user }} has commented on topic '{{ topic }}' in '{{ group }}':{% endblocktrans %}
+{% else %}
+{% blocktrans %}{{ user }} has commented on topic '{{ topic }}':{% endblocktrans %}
+{% endif %}
+
+{{ comment.comment }}
+
+
+Topic:
+{{ topic.title }}
+
+
+Link: http://{{ current_site }}{{ topic.get_absolute_url }}

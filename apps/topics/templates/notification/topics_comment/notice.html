@@ -1,0 +1,7 @@
+{% load i18n %}
+{% url profile_detail username=user.username as user_url %}
+{% if group %}
+{% blocktrans with topic.get_absolute_url as topic_url and group.get_absolute_url as group_url %}<a href="{{ user_url }}">{{ user }}</a> has commented on topic '<a href="{{ topic_url }}">{{ topic }}</a>' in '<a href="{{ group_url }}">{{ group }}</a>'.{% endblocktrans %}
+{% else %}
+{% blocktrans with topic.get_absolute_url as topic_url and group.get_absolute_url as group_url %}<a href="{{ user_url }}">{{ user }}</a> has commented on topic '<a href="{{ topic_url }}">{{ topic }}</a>'.{% endblocktrans %}
+{% endif %}
