@@ -5,8 +5,8 @@ body.wiki #tab_wiki a,
 body.topics #tab_topics a,
 body.tasks #tab_tasks a,
 body.bookmarks #tab_bookmarks a,
-body.notices #tab_notices a
-body.photos #tab_photos a,
+body.notices #tab_notices a,
+body.photos #tab_photos a
 {
     color: #000; /* selected tab text colour */
 }
@@ -15,8 +15,8 @@ body.wiki #tab_wiki,
 body.topics #tab_topics,
 body.tasks #tab_tasks,
 body.bookmarks #tab_bookmarks,
-body.notices #tab_notices
-body.photos #tab_photos,
+body.notices #tab_notices,
+body.photos #tab_photos
 {
     margin: 0; /* to compensate for border */
     padding: 5px 0 5px;
