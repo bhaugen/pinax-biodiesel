@@ -7,6 +7,7 @@
 {% load tasks_tags %}
 {% load tagging_tags %}
 {% load group_tags %}
+{% load extra_tagging_tags %}
 
 {#}{% block head_title %}Tasks {% if project %} for {{ project.name }}{% endif %}{% endblock %}#}
 {% block head_title %}Tasks{% endblock %}
@@ -117,7 +118,7 @@
                                     <span class="warning">unassigned</span>
                                 {% endif %}
                             </td>
-                            <td>{% task_tags item group %}</td>
+                            <td>{% show_tags_for item %}</td>
                             <td>{{ item.status }}</td>
                         </tr>
                     {% endfor %}
@@ -157,7 +158,7 @@
                                     <span class="warning">unassigned</span>
                                 {% endif %}
                             </td>
-                            <td>{% task_tags task group %}</td>
+                            <td>{% show_tags_for task %}</td>
                             <td>{{ task.status }}</td>
                         </tr>
                     {% endfor %}

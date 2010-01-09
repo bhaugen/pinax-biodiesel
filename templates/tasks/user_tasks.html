@@ -5,6 +5,7 @@
 {% load shorttimesince_tag %}
 {% load humanize %}
 {% load group_tags %}
+{% load extra_tagging_tags %}
 
 {% block head_title %}Tasks for {{ other_user }}{% endblock %}
 
@@ -56,7 +57,7 @@
                             <td>{{ task.id }}</td>
                             <td><a href="{% groupurl task_detail group id=task.id %}">{{ task.summary }}</a></td>
                             <td style="white-space: nowrap">{{ task.modified|shorttimesince }} ago</td>
-                            <td>{% task_tags task group %}</td>
+                            <td>{% show_tags_for task %}</td>
                             <td>{{ task.status }}</td>
                         </tr>
                     {% endfor %}
@@ -108,7 +109,7 @@
                             <td>{{ task.id }}</td>
                             <td><a href="{% groupurl task_detail group id=task.id %}">{{ task.summary }}</a></td>
                             <td style="white-space: nowrap">{{ task.modified|shorttimesince }} ago</td>
-                            <td>{% task_tags task group %}</td>
+                            <td>{% show_tags_for task %}</td>
                             <td>{{ task.status }}</td>
                         </tr>
                     {% endfor %}
@@ -160,7 +161,7 @@
                             <td>{{ task.id }}</td>
                             <td><a href="{% groupurl task_detail group id=task.id %}">{{ task.summary }}</a></td>
                             <td style="white-space: nowrap">{{ task.modified|shorttimesince }} ago</td>
-                            <td>{% task_tags task group %}</td>
+                            <td>{% show_tags_for task %}</td>
                             <td>{{ task.status }}</td>
                         </tr>
                     {% endfor %}
