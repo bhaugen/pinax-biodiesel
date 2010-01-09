@@ -50,53 +50,53 @@ def OR(*l):
 STATE_TRANSITIONS = [
     # open
     (1, 1, always, "leave open"),
-    (1, 7, is_task_manager, "accept"),
-    (1, 2, is_task_manager, "resolved"),
-    (1, 5, is_task_manager, "discussion needed"),
-    (1, 6, is_task_manager, "blocked"),
+    (1, 7, always, "accept"),
+    (1, 2, always, "resolved"),
+    (1, 5, always, "discussion needed"),
+    (1, 6, always, "blocked"),
     
     # resolved
     (2, 1, always, "re-open"),
     (2, 2, always, "leave resolved"),
-    (2, 3, is_task_manager, "close"),
-    (2, 7, is_task_manager, "re-open (accepted)"),
+    (2, 3, always, "close"),
+    (2, 7, always, "re-open (accepted)"),
     
     # closed
     (3, 3, always, "leave closed"),
-    (3, 1, is_task_manager, "re-open"),
-    (3, 7, is_task_manager, "re-open (accepted)"),
+    (3, 1, always, "re-open"),
+    (3, 7, always, "re-open (accepted)"),
     
     # in progress
     (4, 4, always, "still in progress"),
     (4, 5, is_assignee, "discussion needed"),
-    (4, 6, is_task_manager, "blocked"),
-    (4, 8, OR(is_assignee, is_task_manager), "done but needs review"),
+    (4, 6, always, "blocked"),
+    (4, 8, OR(is_assignee, always), "done but needs review"),
     
     # discussion needed
     (5, 5, always, "discussion still needed"),
-    (5, 4, OR(is_assignee, is_task_manager), "in progress"),
-    (5, 1, is_task_manager, "move back to new"),
-    (5, 2, is_task_manager, "resolved"),
-    (5, 6, is_task_manager, "blocked"),
+    (5, 4, OR(is_assignee, always), "in progress"),
+    (5, 1, always, "move back to new"),
+    (5, 2, always, "resolved"),
+    (5, 6, always, "blocked"),
     
     # blocked
     (6, 6, always, "still blocked"),
-    (6, 1, is_task_manager, "move back to new"),
-    (6, 2, is_task_manager, "resolved"),
-    (6, 4, is_task_manager, "in progress"),
-    (6, 5, is_task_manager, "discussion needed"),
+    (6, 1, always, "move back to new"),
+    (6, 2, always, "resolved"),
+    (6, 4, always, "in progress"),
+    (6, 5, always, "discussion needed"),
     
     # accepted
     (7, 7, always, "accepted"),
     (7, 4, is_assignee, "in progress"),
-    (7, 2, is_task_manager, "resolved"),
-    (7, 5, is_task_manager, "discussion needed"),
-    (7, 6, is_task_manager, "blocked"),
+    (7, 2, always, "resolved"),
+    (7, 5, always, "discussion needed"),
+    (7, 6, always, "blocked"),
     
     # fix needs review
     (8, 8, always, "done but needs review"),
-    (8, 4, OR(is_assignee, is_task_manager), "move back to in progress"),
-    (8, 2, is_task_manager, "resolved"),
+    (8, 4, OR(is_assignee, always), "move back to in progress"),
+    (8, 2, always, "resolved"),
 ]
 
 
