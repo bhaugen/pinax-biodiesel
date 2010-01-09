@@ -139,7 +139,9 @@ INSTALLED_APPS = (
     'timezones',
     'ajax_validation',
     'bookmarks',
+    'photologue',
     'avatar',
+    'flag',
     'tagging',
     'threadedcomments',
     'wiki',
@@ -158,7 +160,7 @@ INSTALLED_APPS = (
     'tagging_utils',
     'threadedcomments_extras',
     'tasks',
-    
+    'photos',    
     'tag_app',
     
     'debug_toolbar',

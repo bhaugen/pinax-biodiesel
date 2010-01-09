@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}tasks/css/tasks.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/topics.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}bookmarks/css/bookmarks.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/photos.css" />
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
@@ -28,6 +29,7 @@
     {% if user.is_authenticated %}
         <ul class="tabs">{% spaceless %}
             <li id="tab_profile"><a href="{% url profile_detail user %}">{% trans "Profile" %}</a></li>
+            <li id="tab_photos"><a href="{% url photos %}">{% trans "Photos" %}</a></li>
             <li id="tab_topics"><a href="{% url topic_list %}">{% trans "Topics" %}</a></li>
             <li id="tab_tasks"><a href="{% url task_list %}">{% trans "Tasks" %}</a></li>
             <li id="tab_wiki"><a href="{% url wiki_index %}">{% trans "Wiki" %}</a></li>

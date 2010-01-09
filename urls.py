@@ -32,6 +32,8 @@ urlpatterns = patterns('',
     (r'^topics/', include('topics.urls')),
     (r'^comments/', include('threadedcomments.urls')),
     (r'^wiki/', include('wiki.urls')),
+    (r'^photos/', include('photos.urls')),
+    (r'^flag/', include('flag.urls')),
 
     # emails
     url(r'^sendemail/$', 'emails.views.send_email', name="send_email"),
@@ -40,6 +42,8 @@ urlpatterns = patterns('',
     
     (r'^admin/(.*)', admin.site.root),
 )
+
+from photos.models import Image
 
 if settings.SERVE_MEDIA:
     urlpatterns += patterns('',
