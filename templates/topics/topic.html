@@ -7,6 +7,8 @@
 {% load comments_tag %}
 {% load avatar_tags %}
 {% load group_tags %}
+{% load attachments_tags %}
+{% load theme_tags %}
 
 {% block head_title %}{% trans "Topic" %} : {{ topic.title }}{% endblock %}
 
@@ -53,4 +55,22 @@
     {% else %}
         {% comments topic %}
     {% endif %}
+
+    {% get_attachments_for topic as "attachments" %}
+    {% if attachments %}
+    <h2>{% trans "Attachments" %}</h2>
+    
+    <ul>
+    {% for attachment in attachments %}
+        <li>
+            {% silk "attach" %}
+            <a href="{{ attachment.attachment_file.url }}">{{ attachment.filename }}</a>
+            - <span class="lighter">{{ attachment.created|date:_("DATETIME_FORMAT") }}</span>
+            {% attachment_delete_link attachment %}
+        </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% attachment_form topic %}
 {% endblock %}
