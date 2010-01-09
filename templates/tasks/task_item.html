@@ -12,7 +12,9 @@
     <div class="task-meta">
         
         {% if task.assignee %}
+{% comment %}
             <div class="avatar">{% avatar task.assignee 40 %}</div>
+{% endcomment %}
             <div class="details"><b>{% trans "Assignee" %}</b>: <a href="{% groupurl tasks_for_user group username=task.assignee %}">{{ task.assignee }}</a></div>
         {% else %}
             <span class="warning">{% trans "Unassigned" %}</span>

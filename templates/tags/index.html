@@ -23,7 +23,9 @@
             {% for bookmark in bookmarktags %}
                 <tr class="{% cycle odd,even %}">
                     <td class="meta">
+{% comment %}
                         <div class="avatar">{% avatar bookmark.bookmark.adder 40 %}</div>
+{% endcomment %}
                         <div class="details"><a href="{% url profile_detail bookmark.bookmark.adder.username %}">{{ bookmark.bookmark.adder }}</a></div>
                         {{ bookmark.bookmark.added|date }}
                     </td>

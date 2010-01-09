@@ -8,7 +8,9 @@
     {% for response in responses %}
         <li class="{% cycle even,odd %} thread-{{ response.depth }} clearfix">
             <div class="meta">
+{% comment %}
                 <div class="avatar">{% avatar response.user 40 %}</div>
+{% endcomment %}
                 <div class="details"><a href="{% url profile_detail response.user.username %}">{{ response.user     }}</a></div>
                 {{ response.date_submitted|date }}
             </div>

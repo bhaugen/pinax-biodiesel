@@ -6,7 +6,9 @@
 
 <div class="topic clearfix">
     <div class="task-meta">
+{% comment %}
         <div class="avatar">{% avatar topic.creator 40 %}</div>
+{% endcomment %}
         <div class="details"><a href="{{ topic.creator.get_profile.get_absolute_url }}">{{ topic.creator }}</a></div>
         <div class="created">{{ topic.created|date }}</div>
     </div>

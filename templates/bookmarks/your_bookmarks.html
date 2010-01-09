@@ -16,7 +16,9 @@
             {% for bookmark_instance in bookmark_instances %}
                 <tr class="{% cycle odd,even %}">
                     <td class="meta">
+{% comment %}
                         <div class="avatar">{% avatar bookmark_instance.bookmark.adder 40 %}</div>
+{% endcomment %}
                         <div class="date">{{ bookmark_instance.bookmark.added|date }}</div>
                         <div class="details"><a href="{% url profile_detail bookmark_instance.bookmark.adder.username %}">{{ bookmark_instance.bookmark.adder }}</a></div>
                     </td>
