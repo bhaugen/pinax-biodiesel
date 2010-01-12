@@ -102,9 +102,10 @@ h1 {
     height: 79px;
 }
 #tabhead .login {
+    height: 12px;
     position: absolute;
     top: 6px;
-    right: 40px;
+    right: 15px;
     color: #DEF; /* login bar text colour */
 }
 #tabhead .login a, #tabhead .login a:visited {
