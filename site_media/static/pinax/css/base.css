@@ -114,10 +114,6 @@ h1 {
     color: #FFF; /* login bar link hover colour */
 }
 
-/* hides from ie5-mac \*/
-* html .login { height: 1%; }
-/* end hide from ie5-mac */
-
 #locale_switcher {
     display: inline;
 }
