@@ -1,5 +1,11 @@
 #tabhead div
 { 
 	zoom: 1; 
-} 
+}
+
+#tabhead .login 
+{
+	position: relative !important;
+    right: 80%;
+}
 
