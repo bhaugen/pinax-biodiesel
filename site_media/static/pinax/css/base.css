@@ -102,7 +102,6 @@ h1 {
     height: 79px;
 }
 #tabhead .login {
-    height: 12px;
     position: absolute;
     top: 6px;
     right: 15px;
@@ -114,6 +113,10 @@ h1 {
 #tabhead .login a:hover {
     color: #FFF; /* login bar link hover colour */
 }
+
+/* hides from ie5-mac \*/
+* html .login { height: 1%; }
+/* end hide from ie5-mac */
 
 #locale_switcher {
     display: inline;
