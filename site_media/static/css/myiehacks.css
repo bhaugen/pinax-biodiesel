@@ -1,5 +1,6 @@
 #tabhead div
 { 
 	zoom: 1; 
+	overflow: scroll;
 } 
 
