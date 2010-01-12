@@ -80,7 +80,9 @@ h1 {
     visibility: hidden;
 }
 
-
+/* hides from ie5-mac \*/
+* html .clearfix { height: 1%; }
+/* end hide from ie5-mac */
 
 
 /* HEADER */
