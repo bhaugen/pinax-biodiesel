@@ -80,9 +80,7 @@ h1 {
     visibility: hidden;
 }
 
-/* hides from ie5-mac \*/
-* html .clearfix { height: 1%; }
-/* end hide from ie5-mac */
+
 
 
 /* HEADER */
@@ -107,6 +105,7 @@ h1 {
     right: 15px;
     color: #DEF; /* login bar text colour */
 }
+
 #tabhead .login a, #tabhead .login a:visited {
     color: #DEF; /* login bar link colour */
 }
